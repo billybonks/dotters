@@ -1,0 +1,36 @@
+[hub]
+protocol = https
+[credential]
+[user]
+	name = billybonks
+	email = sebastienstettler@gmail.com
+[push]
+	default = current
+[rebase]
+   autosquash = true
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[core]
+	excludesfile = /Users/billybonks/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree 2.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = helper
+[color "diff"]
+	whitespace = red reverse
+[colors]
+	ui = true
+[alias]
+	list-branches = branch --sort=committerdate
+	delete-merged-branches = !git list-branches branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin
+	remove-untracked = clean -fx
