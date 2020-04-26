@@ -20,4 +20,8 @@ nvm install v10
 nvm install v9
 curl https://raw.githubusercontent.com/billybonks/dotters/master/gitconfig > ~/.gitconfig
 curl https://raw.githubusercontent.com/billybonks/dotters/master/zshrc > ~/.zshrc
+curl https://raw.githubusercontent.com/billybonks/dotters/master/vimrc > ~/.vimrc
+curl https://raw.githubusercontent.com/billybonks/dotters/master/vim > ~/.vim
 brew install heroku/brew/heroku
+curl -fsSL https://raw.githubusercontent.com/billybonks/dotters/master/atom.sh | bash
+curl -fsSL https://raw.githubusercontent.com/billybonks/dotters/master/vim.sh | bash

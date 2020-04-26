@@ -1,10 +1,10 @@
- Path to your oh-my-zsh installation.
+Path to your oh-my-zsh installation.
 export ZSH=/Users/billybonks/.oh-my-zsh
 source ~/.bin/tmuxinator.zsh
 export ATOM_DEV_RESOURCE_PATH=/Users/billybonks/opensource/atom
 alias tmuxinator=/Users/billybonks/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/tmuxinator-0.6.11/bin/tmuxinator
 export EDITOR=vim
-export PATH=/Applications/Google\ Chrome.app/Contents/MacOS:/usr/local/go/bin:$PATH
+export PATH=/Users/billybonks/unearthing/bin:/Applications/Google\ Chrome.app/Contents/MacOS:/usr/local/go/bin:$PATH
 alias glgo="git log --pretty=oneline -n"
 alias gri="git rebase -i"
 alias gtrash="git reset head --hard"
@@ -97,3 +97,11 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="/Users/billybonks/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/billybonks/.nvm/versions/node/v8.11.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/billybonks/.nvm/versions/node/v8.11.3/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/billybonks/.nvm/versions/node/v8.11.3/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/billybonks/.nvm/versions/node/v8.11.3/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
