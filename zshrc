@@ -4,7 +4,7 @@ source ~/.bin/tmuxinator.zsh
 export ATOM_DEV_RESOURCE_PATH=/Users/billybonks/opensource/atom
 alias tmuxinator=/Users/billybonks/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/tmuxinator-0.6.11/bin/tmuxinator
 export EDITOR=vim
-export PATH=/Users/billybonks/unearthing/bin:/Applications/Google\ Chrome.app/Contents/MacOS:/usr/local/go/bin:$PATH
+
 alias glgo="git log --pretty=oneline -n"
 alias gri="git rebase -i"
 alias gtrash="git reset head --hard"
@@ -60,11 +60,16 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git wakatime)
+
 
 # User configuration
+export PATH=/Users/billybonks/unearthing/bin:/Applications/Google\ Chrome.app/Contents/MacOS:/usr/local/go/bin:$PATH
+export PATH=/Users/billybonks/.rbenv/shims:$PATH
+export PATH=/Users/billybonks/.rbenv/bin:$PATH
+export PATH=usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+export PATH=/opt/X11/bin:$PATH
+export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin/:$PATH
 
-export PATH="/Users/billybonks/.rbenv/shims:/Users/billybonks/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Postgres.app/Contents/Versions/latest/bin/"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
