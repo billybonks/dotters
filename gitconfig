@@ -30,7 +30,12 @@ protocol = https
 	whitespace = red reverse
 [colors]
 	ui = true
+[url "git@github.com:"]
+    insteadOf = "https://github.com/"
 [alias]
-	list-branches = branch --sort=committerdate
-	delete-merged-branches = !git list-branches branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin
+	lb = branch --sort=committerdate
+	ub = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
+	co = checkout
+	pruneb = !git lb branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin
 	remove-untracked = clean -fx
+	fetch-prs = !git config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*' && git fetch origin
