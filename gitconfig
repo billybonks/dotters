@@ -33,9 +33,18 @@ protocol = https
 [url "git@github.com:"]
     insteadOf = "https://github.com/"
 [alias]
+	s = status
+	lo = log --pretty=oneline -n
 	lb = branch --sort=committerdate
 	ub = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
 	co = checkout
+	cb = checkout -b
+	lo = log --pretty=oneline -n
+	changelog = log --format=%s%n%b -n
+	standup = log --all --author=$USER --since='9am yesterday' --format=%s
+	chagelog-since = "!f() { git distance ${1} | xargs git changelog;  }; f"
+	distance = "!f() { git log --format=%s ${1}.. | wc -l;  }; f"
+	commits-from = "!f() { git distance ${1} | xargs git lo;  }; f"
 	pruneb = !git lb branch --merged master | grep -v -e 'master' -e '\\*' | xargs -n 1 git branch -d && git remote prune origin
 	remove-untracked = clean -fx
 	fetch-prs = !git config --add remote.origin.fetch '+refs/pull/*/head:refs/remotes/origin/pr/*' && git fetch origin
