@@ -5,17 +5,16 @@ else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-# check if zsh is already isntalled
-brew install zsh
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# check if zsh is already installed
+# nvm install cotains this could be usefull for finding out what terminal is being used
+# "nvm source string already in /Users/billybonks/.zshrc"
 if [[ -f ~/.zshrc ]]; then
     echo "zshrc already exists"
 else
+    brew install zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     curl https://raw.githubusercontent.com/billybonks/dotters/master/zshrc > ~/.zshrc
 fi
-
-# setup git here
 
 if which rbenv > /dev/null; then
   echo 'rbenv already installed. Skipping'
@@ -30,12 +29,6 @@ if [[ -n $(brew ls --versions ruby-build) ]]; then
 else
   echo "Installing ruby-build"
   brew install ruby-build
-fi
-
-if [[ -f ~/.gitconfig ]]; then
-    echo "git config already exists"
-else
-    curl https://raw.githubusercontent.com/billybonks/dotters/master/gitconfig > ~/.gitconfig
 fi
 
 if [[ -f ~/.vim ]]; then
@@ -111,5 +104,10 @@ fi
 curl -fsSL https://raw.githubusercontent.com/billybonks/dotters/master/atom.sh | bash
 curl -fsSL https://raw.githubusercontent.com/billybonks/dotters/master/vim.sh | bash
 
-# nvm install cotains this could be usefull for finding out what terminal is being used
-# "nvm source string already in /Users/billybonks/.zshrc"
+
+#Do this once all clones are completed, because it includes the private keys
+if [[ -f ~/.gitconfig ]]; then
+    echo "git config already exists"
+else
+    curl https://raw.githubusercontent.com/billybonks/dotters/master/gitconfig > ~/.gitconfig
+fi
