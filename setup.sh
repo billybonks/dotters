@@ -1,6 +1,3 @@
-# need some code to check if this is being used
-
-
 if which brew > /dev/null; then
   echo 'Homebrew already installed. Skipping'
 else
@@ -9,7 +6,8 @@ else
 fi
 
 # check if zsh is already isntalled
-brew install zsh zsh-completions
+brew install zsh
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 if [[ -f ~/.zshrc ]]; then
     echo "zshrc already exists"
