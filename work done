@@ -1,0 +1,15 @@
+
+setup github ssh
+
+
+download ngrok from site
+sudo tar -xvzf ~/Downloads/ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
+
+mouse-scroll-multiplier = 1.5 ghostty config
+
+
+install fly ctl
+sudo tar -xvzf ~/Downloads/ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
+install zed
+install lutris
+copy ssh keys to location
